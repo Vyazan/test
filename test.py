@@ -19,7 +19,6 @@ class IntegrationDB:
 
 
     def check_connection(self):
-        print("check_connection", id(self.session))
         if not self.session or not self.session.is_active:
             self.connect()
 
