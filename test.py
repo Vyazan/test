@@ -25,8 +25,8 @@ class IntegrationDB:
 
     def close(self):
         self.session.close()
-    
-  def add_integration_secrets(self, client_id: str, client_secret: str):
+
+    def add_integration_secrets(self, client_id: str, client_secret: str):
         self.check_connection()
         row = self.session.query(IntegrationTable).filter(
             IntegrationTable.integration_name == self.integration_name).one_or_none()
