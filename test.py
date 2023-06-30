@@ -29,6 +29,7 @@ class IntegrationDB:
             return None
 
         sql = 'INSERT INTO integrations (integration_name, client_id, client_secret) VALUES (%s, %s, %s)'
+        self.connect()
         self.__cursor.execute(sql, (self.integration_name, client_id, client_secret))
         self.__connection.commit()
         self.close()
