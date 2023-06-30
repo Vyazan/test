@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "C:\Users\Илья\Nextcloud\Sync\code\Python\Projects\_onelink\flaskprod\venv\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Илья\Nextcloud\Sync\code\Python\Projects\_onelink\flaskprod\venv\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Илья\Nextcloud\Sync\code\Python\Projects\_onelink\flaskprod\venv\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Илья\Nextcloud\Sync\code\Python\Projects\_onelink\flaskprod\venv\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Илья\Nextcloud\Sync\code\Python\Projects\_onelink\flaskprod\integrations\oris_vidnoe\routes.py", line 40, in mediline_records
+    msg, code = dental_pro.process_webhook(req_args=request.args, object_type="mediline_records", data=data)
+  File "C:\Users\Илья\Nextcloud\Sync\code\Python\Projects\_onelink\flaskprod\libs\log.py", line 172, in wrapper
+    return fn(*args, **kwargs)
+  File "C:\Users\Илья\Nextcloud\Sync\code\Python\Projects\_onelink\flaskprod\integrations\oris_vidnoe\dental_pro.py", line 814, in process_webhook
+    row = integration.db.get_setting(key='is_worker_run')
+  File "C:\Users\Илья\Nextcloud\Sync\code\Python\Projects\_onelink\flaskprod\libs\integration.py", line 289, in get_setting
+    row = self.__cursor.fetchone()
+  File "C:\Users\Илья\Nextcloud\Sync\code\Python\Projects\_onelink\flaskprod\venv\lib\site-packages\psycopg2\extras.py", line 82, in fetchone
+    res = super().fetchone()
+psycopg2.ProgrammingError: no results to fetch
+192.168.0.254 - - [30/Jun/2023 19:14:38] "POST /integrations/oris_vidnoe/dental_pro/mediline_records?token=UnCxdFSEXjStxSjxJfkyhgWPnqZdJFcpbY5gNhXfuHTPvJbDFLHnd4ewVfrkUUcW HTTP/1.1" 500 -
+
+Process finished with exit code 0
